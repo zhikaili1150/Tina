@@ -187,7 +187,7 @@ class GRPOConfig(TrainingArguments):
         },
     )
     vllm_dtype: Optional[str] = field(
-        default="auto",
+        default="float16",
         metadata={
             "help": "Data type to use for vLLM generation. If set to 'auto', the data type will be automatically "
             "determined based on the model configuration. Find the supported values in the vLLM documentation."
