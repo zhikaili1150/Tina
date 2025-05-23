@@ -5,6 +5,6 @@ import os
 if __name__ == "__main__":
     CKPT_DIR = os.environ['CKPT_DIR']
 
-    print("Downloading deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B ...")
-    snapshot_download(repo_id="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-                      local_dir=f"{CKPT_DIR}/models/DeepSeek-R1-Distill-Qwen-1.5B/base")
+    print("Downloading Qwen/Qwen3-0.6B-Base ...")
+    snapshot_download(repo_id="Qwen/Qwen3-0.6B-Base",
+                      local_dir=f"{CKPT_DIR}/models/Qwen3-0.6B-Base/base")
