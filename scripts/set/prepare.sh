@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-MAMBA_ENV="tina"
-eval "$(mamba shell hook --shell bash)" && mamba activate "${MAMBA_ENV}"
+CONDA_ENV="tina"
+eval "$( shell hook --shell bash)" &&  activate "${CONDA_ENV}"
 echo "START TIME: $(date)"
 echo "PYTHON ENV: $(which python)"
 
