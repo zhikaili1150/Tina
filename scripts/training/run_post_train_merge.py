@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     base_model = AutoModelForCausalLM.from_pretrained(
         base_model_name_or_path,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=torch.float16,
         device_map="auto") # Automatically distributes across available GPUs
 
     model = PeftModel.from_pretrained(base_model, adapter_model_name_or_path)
