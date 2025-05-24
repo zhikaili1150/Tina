@@ -11,7 +11,7 @@ rl_post_train_reward_weights:
 
 # Model configs from trl
 model_name_or_path: Qwen3-0.6B-Base
-attn_implementation: flash_attention_2
+attn_implementation: sdpa
 use_peft: true
 lora_r: 32
 lora_alpha: 128
@@ -51,16 +51,16 @@ lr_scheduler_kwargs:
   min_lr_rate: 0.1
 max_prompt_length: 512
 max_completion_length: 3584
-max_steps: 7500 # use 7500 for lr scheduler but stop at 3750 steps
-num_generations: 4
+max_steps: 4 # use 7500 for lr scheduler but stop at 3750 steps
+num_generations: 2
 num_train_epochs: 1
 overwrite_output_dir: true
-per_device_train_batch_size: 4
+per_device_train_batch_size: 2
 report_to:
 - wandb
 
 save_strategy: steps
-save_steps: 100
+save_steps: 2
 save_total_limit: 100
 
 seed: 42
