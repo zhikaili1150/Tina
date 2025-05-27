@@ -53,7 +53,7 @@ for CKPT in "${CKPT_LIST[@]}"; do
     MODEL_PATH="${CKPT_DIR}/models/${MODEL_NAME}/${PT_TYPE}_${DATASET_NAME}/${CKPT}-merged"
 
     # Set model arguments (ensure that MODEL_PATH, GPU_COUNT, OUTPUT_DIR, and MODEL are defined)
-    MODEL_ARGS="pretrained=$MODEL_PATH,dtype=float16,data_parallel_size=$GPU_COUNT,max_model_length=32768,gpu_memory_utilization=0.5,generation_parameters={max_new_tokens:32768,temperature:0.6,top_p:0.95}"
+    MODEL_ARGS="pretrained=$MODEL_PATH,dtype=bfloat16,data_parallel_size=$GPU_COUNT,max_model_length=32768,gpu_memory_utilization=0.5,generation_parameters={max_new_tokens:32768,temperature:0.6,top_p:0.95}"
 
     # Define an array of tasks to evaluate
     tasks=("aime24" "math_500" "gpqa:diamond" "aime25" "amc23" "minerva")

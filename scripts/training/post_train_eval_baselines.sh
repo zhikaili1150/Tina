@@ -18,7 +18,7 @@ echo ""
 MODEL_LIST=("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" "agentica-org/DeepScaleR-1.5B-Preview" "knoveleng/Open-RS1" "knoveleng/Open-RS2" "knoveleng/Open-RS3" "RUC-AIBOX/STILL-3-1.5B-preview")
 
 for MODEL_NAME in "${MODEL_LIST[@]}"; do
-    MODEL_ARGS="pretrained=$MODEL_NAME,dtype=float16,data_parallel_size=$GPU_COUNT,max_model_length=32768,gpu_memory_utilization=0.7,generation_parameters={max_new_tokens:32768,temperature:0.6,top_p:0.95}"
+    MODEL_ARGS="pretrained=$MODEL_NAME,dtype=bfloat16,data_parallel_size=$GPU_COUNT,max_model_length=32768,gpu_memory_utilization=0.7,generation_parameters={max_new_tokens:32768,temperature:0.6,top_p:0.95}"
 
     # Define an array of tasks to evaluate
     tasks=("aime24" "math_500" "gpqa:diamond" "aime25" "amc23" "minerva")

@@ -132,7 +132,7 @@ def main():
 
     model = AutoModelForCausalLM.from_pretrained(
         model_args.model_name_or_path,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.bfloat16,
         attn_implementation=model_args.attn_implementation,
         use_cache=False if training_args.gradient_checkpointing else True)
 
